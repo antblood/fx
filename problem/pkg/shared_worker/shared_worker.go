@@ -23,6 +23,7 @@ func NewSharedWorker() SharedWorkerOuts {
 	}
 }
 
+// Internal struct, can't change this
 type SharedWorker struct{}
 
 func (w *SharedWorker) RegisterActivity(activityName string) {

@@ -12,7 +12,17 @@ type WorkerParams struct {
 	Worker IWorker
 }
 
-func RegisterActivities(params WorkerParams) {
+type RegisterActivitiesOut struct {
+	fx.Out
+
+	Activities []string
+}
+
+func RegisterActivities(params WorkerParams) RegisterActivitiesOut {
 	params.Worker.RegisterActivity("activity1")
 	params.Worker.RegisterActivity("activity2")
+
+	return RegisterActivitiesOut{
+		Activities: []string{},
+	}
 }
